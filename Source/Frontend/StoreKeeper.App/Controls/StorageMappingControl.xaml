@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="StoreKeeper.App.Controls.StorageMappingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:CommonBase.UI.Localization;assembly=CommonBase.UI"
+             xmlns:vm="clr-namespace:StoreKeeper.App.ViewModels.Storage"
+             >
+    <Grid>
+        <Grid.Resources>
+            <ObjectDataProvider x:Key="StorageListData" ObjectType="{x:Type vm:StorageListProvider}" MethodName="GetData" />
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="0"
+                    Margin="0, 0, 0, 10"
+                    >
+            <Label Content="{loc:Translate SetAllToStorage}" />
+            <Label Content=":"/>
+            <ComboBox Width="100"
+                      ItemsSource="{Binding Source={StaticResource StorageListData}}"
+                      Margin="5, 0, 10, 0"
+                      x:Name="StorageList"
+                      />
+            <Button Content="{loc:Translate Set}" 
+                    ToolTip="{loc:Translate Set}" 
+                    Width="60"
+                    Command="{Binding SetAllCommand}"
+                    CommandParameter="{Binding ElementName=StorageList, Path=SelectedItem}"
+                    />
+        </StackPanel>
+        <DataGrid Grid.Row="1"
+                AutoGenerateColumns="False"
+                AlternatingRowBackground="LightGray"
+                Margin="0, 0, 0, 5"
+                SelectionUnit="FullRow"
+                SelectionMode="Single"
+                CanUserResizeColumns="True"
+                CanUserSortColumns="True"
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                CanUserReorderColumns="False"
+                EnableRowVirtualization="True"
+                ItemsSource="{Binding ItemsData}"
+                HeadersVisibility="Column"
+                Name="MainGrid"
+                HorizontalScrollBarVisibility="Auto"
+                VerticalScrollBarVisibility="Auto"
+                IsSynchronizedWithCurrentItem="True"
+                VirtualizingStackPanel.IsVirtualizing="True"
+                >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{loc:Translate Code}" 
+                                    Width="60"
+                                    Binding="{Binding Code}"
+                                    CanUserSort="True"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate Type}"
+                                    Width="50"
+                                    Binding="{Binding TypeStr}"
+                                    IsReadOnly="True"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate NameDescription}"
+                                    Width="200"
+                                    Binding="{Binding NameDescription}"
+                                    IsReadOnly="True"
+                                    />
+
+                <DataGridComboBoxColumn Header="{loc:Translate Storage}" 
+                                        Width="80"
+                                        ItemsSource="{Binding Source={StaticResource StorageListData}}"
+                                        SelectedItemBinding="{Binding StorageItem}"
+                                        />
+                
+                <DataGridTemplateColumn Header="{loc:Translate SkipCalculation}"
+                                        Width="100"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center" 
+                                      IsChecked="{Binding SkipCalculation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Localization Culture="en-US">
+  <String Key="ProductionOrders">Production orders</String>
+  <String Key="Material">Material</String>
+  <String Key="MaterialOrders">Material orders</String>
+  <String Key="ExternStorages">Extern storages</String>
+  <String Key="LogWindowTitle">Application log</String>
+  <String Key="PohodaSync">Sync with Pohoda</String>
+  <String Key="BackupToServer">Backup to server</String>
+  
+  <!-- columns names -->
+  <String Key="Code">Code</String>
+  <String Key="SupplierCode">Supplier code</String>
+  <String Key="Type">Type</String>
+  <String Key="NameDescription">Name (description)</String>
+  <String Key="StockAvailable">Available</String>
+  <String Key="CountToOrder">Count to order</String>
+  <String Key="OrderedCount">Ordered count</String>
+  <String Key="InOrderedProducts">In ordered products</String>
+  <String Key="ExternStorageCount">Extern storage count</String>
+  <String Key="TransferHistory">Transfer history</String>
+  <String Key="Supplier">Supplier</String>
+  <String Key="Price">Price</String>
+  <String Key="Priority">Priority</String>
+  <String Key="PossibleMakeCount">Possible make count</String>
+  <String Key="MustBeOrdered">Must be ordered</String>
+  <String Key="OrderTerm">Order term</String>
+  <String Key="PlannedTerm">Planned term</String>
+  <String Key="EndTerm">End term</String>
+  <String Key="Color">Color</String>
+  <String Key="Done">Done</String>
+  <String Key="CountInProduct">Count in product</String>
+  <String Key="Storage">Storage</String>
+  <String Key="ProductionReservation">Reservation for production</String>
+  <String Key="ToOrder">To order</String>
+  <String Key="Ordered">Ordered</String>
+  <String Key="DeliveredCount">Delivered count</String>
+  <String Key="Company">Company</String>
+  <String Key="StorageCount">Storage count</String>
+  <String Key="ToDeliverCount">Count to deliver</String>
+  <String Key="MaterialTransfer">Material transfer</String>
+  <String Key="Date">Date</String>
+  <String Key="TransferedCount">Delivered</String>
+  <String Key="CountBeforeDeliver">Count before delivery</String>
+  <String Key="TotalCount">Total count</String>
+  <String Key="MissingMaterialPrint">Print of missing material</String>
+  <String Key="PrintMaterialOrders">Print of orderd material</String>
+  <String Key="Print">Print</String>
+  <String Key="Action">Action</String>
+  <String Key="ResolveOrder">Resolve order</String>
+  <String Key="DeleteOrder">Delete order</String>
+  <String Key="CreateOrder">Create order</String>
+  <String Key="ProductDetail">Product detail</String>
+  <String Key="Calculation">Calculation</String>
+  <String Key="Calculating">Calculation in progress</String>
+  <String Key="ServerConnected">Connected</String>
+  <String Key="ServerDisconnected">Disconnected</String>
+  <String Key="ServerInvalid">Server invalid</String>
+  <String Key="TodayStatus">Today</String>
+  <String Key="SettingsSavedConfirmation">Settings saved.</String>
+  <String Key="SettingsSavedWarning">Settings changes will be applied after application restart.</String>
+
+  <String Key="ServerConnectionStatus">ServerConnectionStatus</String>
+  <String Key="PrintDeliveryNote">Print of delivery note</String>
+  <String Key="ProductStorageMapping">Mapping of product to storage</String>
+  <String Key="ProductOrderDetail">Detail of production order</String>
+  <String Key="StorageList">Storage list</String>
+  <String Key="StorageName">Storage name</String>
+  <String Key="SettingsWindowTitle">Settings</String>
+  <String Key="ServerAccessSettings">Server access</String>
+  <String Key="ApplicationSettings">Application settings</String>
+  <String Key="ServerName">Server IP address</String>
+  <String Key="Port">Port</String>
+  <String Key="User">User</String>
+  <String Key="Password">Password</String>
+  <String Key="NotificationPort">Notifikace port</String>
+  <String Key="MinimumSeekLength">Minimum lenght of characters to seek</String>
+  <String Key="AccountingDataSync">Synchronization with Pohoda</String>
+  <String Key="MergingAccountingData">Data actualization</String>
+  <String Key="ArticleName">Article name</String>
+
+  <String Key="Card">Material</String>
+  <String Key="Product">Product</String>
+  <String Key="Unknown">Unknown</String>
+  
+  <String Key="Note">Note</String>
+  <String Key="StockAvailableEx">Available with ext.</String>
+  <String Key="SearchNotFound">Item not found!</String>
+  <String Key="CreateOrder">Create product order</String>
+  <String Key="OrderCreated">Order has been created sucessfully.</String>
+  <String Key="SetAllToStorage">Set all to storage</String>
+  <String Key="Set">Set</String>
+  <String Key="SettingStorageOperation">Storage setting</String>
+
+  <String Key="AllStorages">All storages</String>
+  <String Key="SelectedStorages">Selected storage</String>
+  <String Key="Show">Show</String>
+  <String Key="NeedCalculation">Changes - execute calculation.</String>
+  <String Key="LogEntriesSaved">Log entries saved.</String>
+  <String Key="CloseAppQuestion">Do you really want to close the application?</String>
+  <String Key="SentToPrinter">Printint request send.</String>
+  <String Key="NoPages">No pages to print.</String>
+
+  <String Key="MaterialOrderAlreadyExists">Material order already exists.</String>
+  <String Key="MissingMaterial">Missing material</String>
+  <String Key="SelectAll">Select all</String>
+
+  <String Key="CompanyName">Company</String>
+  <String Key="Street">Street</String>
+  <String Key="Number">Number</String>
+  <String Key="ZipCode">Zip</String>
+  <String Key="City">City</String>
+  <String Key="CompanyId">Company ID</String>
+  <String Key="TaxId">Tax ID</String>
+
+  <String Key="DeliveryNoteSettings">Delivery notes</String>
+  <String Key="Parlor">Parlor</String>
+  <String Key="Phone">Phone</String>
+  <String Key="CellPhone">Cell phone</String>
+  <String Key="Email">E-mail</String>
+  <String Key="Web">Web</String>
+  <String Key="CreatedByName">Created by</String>
+  <String Key="CreatedByEmail">Created by (email)</String>
+
+  <String Key="AddStorage">Add new storage</String>
+  <String Key="EditStorage">Edit storage</String>
+
+  <String Key="DeliveryNoteWindowTitle">Delivery note details</String>
+  <String Key="NoteNumber">Delivery note no.</String>
+  <String Key="NoteDate">Created</String>
+  <String Key="OrderNumber">Order no.</String>
+  <String Key="OrderDate">Order date</String>
+  
+  <String Key="ShowMaterialTransfer">Show material transfer</String>
+  <String Key="CreateExternStorage">Create extern storage</String>
+  <String Key="DeleteStorage">Delete storage</String>
+  
+  <String Key="SaveLog">Save log</String>
+
+  <String Key="UpdateData">Update data</String>
+  <String Key="NewDataAvailable">New data available</String>
+
+  <String Key="PerformingDataUpdate">Performing data update</String>
+  <String Key="DownloadingUpdateData">Downloading of updated data</String>
+  <String Key="MergingUpdateData">Merging of updated data</String>
+  <String Key="PerformingDataSave">Saving data on server</String>
+  <String Key="DataSaved">Data saved on server.</String>
+
+  <String Key="TransfersDeleted">Year change detected, all transfers have been removed.</String>
+
+  <String Key="ServerAdminWindowTitle">Server administration</String>
+  <String Key="SecurityToken">Security token</String>
+  <String Key="ServerDatabaseInfo">Server database</String>
+  <String Key="UserManagement">Users</String>
+  <String Key="NewUser">New user</String>
+  <String Key="LastServerUpdate">Last save</String>
+  <String Key="ResponsibleUser">Responsible user</String>
+  <String Key="LastAccountingUpdate">Last Pohoda update</String>
+  <String Key="DeleteUser">Delete user</String>
+  <String Key="CannotOpenAdministration">Connection to server is not established. It is not possible to administer server.</String>
+  <String Key="AddNewUser">Add new user</String>
+
+  <String Key="LastDataUpdate">Last data update</String>
+  <String Key="LastSave">Last save</String>
+  
+  <String Key="PohodaSync">Sync with Pohoda </String>
+  
+  <String Key="CopyToken">Copy token</String>
+
+  <String Key="SkipCalculation">Skip Calculation</String>
+
+  <String Key="Special">Special commands</String>
+  <String Key="PohodaReload">Reload data from Pohoda</String>
+  <String Key="ShowLog">Show log</String>
+  <String Key="ShowAdministration">Show server administration</String>
+  <String Key="ReloadQuestion">This operation is very time consuming. Do you really want to reload all data?</String>
+
+  <String Key="InitApp">Application initialize</String>
+
+  <String Key="DatabaseNotConnectedError">Database is not connected. Application will exit.</String>
+
+  <String Key="Database">Database</String>
+
+  <String Key="DBStatus_Connected">Normal</String>
+  <String Key="DBStatus_Locked">Locked</String>
+  <String Key="DBStatus_Blocked">Blocked</String>
+
+  <String Key="AcquireLock">Acquiring lock</String>
+
+  <String Key="CalcAndSave">Calculation+Save</String>
+
+  <String Key="Loss">Loss</String>
+
+  <String Key="LockedBy">Locked by</String>
+
+  <String Key="DatabaseLockedException">Database is locked by another user.</String>
+
+  <String Key="CreateSubOrder">Create sub-order</String>
+  <String Key="CreatingSubOrder">Creating sub-order</String>
+  <String Key="SubOrderCreated">Sub-order created.</String>
+
+  <String Key="PrintLoss">Print Loss</String>
+  <String Key="DeleteLoss">Delete Loss</String>
+  <String Key="LossList">Loss List</String>
+  <String Key="ClearingLoss">Clearing Loss</String>
+
+  <String Key="DataLoading">Data loading</String>
+  
+  <String Key="QuestionRemoveOrder">Do you really want to remove the following order?</String>
+  <String Key="QuestionRemoveOrderDetail">{0} ({1})</String>
+
+  <!-- Special strings with added symbol -->
+  <String Key="ExternStoragesDots">Extern Storages ...</String>
+  <String Key="BackupToServerDots">Backup to server ...</String>
+  <String Key="CodeColon">Code :</String>
+</Localization>

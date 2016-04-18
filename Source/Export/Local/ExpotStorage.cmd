@@ -1,0 +1,1 @@
+call "C:\Program Files (x86)\STORMWARE\POHODA\Pohoda.exe" /XML "XML" "abc" "C:\StoreKeeper.Server\Export\PohodaExport.ini"

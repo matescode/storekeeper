@@ -1,0 +1,113 @@
+﻿<UserControl x:Class="StoreKeeper.App.Controls.ProductOrderDetailControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:CommonBase.UI.Localization;assembly=CommonBase.UI"
+             xmlns:vm="clr-namespace:StoreKeeper.App.ViewModels">
+    <Grid>
+        <Grid.Resources>
+            <vm:BindingProxy x:Key="Proxy" Data="{Binding}" />
+        </Grid.Resources>
+        <DataGrid AutoGenerateColumns="False"
+                      AlternatingRowBackground="LightGray"
+                      Margin="0, 0, 0, 5"
+                      SelectionUnit="FullRow"
+                      SelectionMode="Single"
+                      CanUserResizeColumns="True"
+                      CanUserSortColumns="True"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      CanUserReorderColumns="False"
+                      EnableRowVirtualization="True"
+                      ItemsSource="{Binding ItemsData}"
+                      HeadersVisibility="Column"
+                      Name="MainGrid"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto"
+                      IsSynchronizedWithCurrentItem="True"
+                      IsReadOnly="True"
+                      VirtualizingStackPanel.IsVirtualizing="True"
+                      >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{loc:Translate Code}" 
+                                    Width="60"
+                                    Binding="{Binding Code}"
+                                    CanUserSort="True"
+                                    ElementStyle="{StaticResource BaseCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate Type}"
+                                    Width="50"
+                                    Binding="{Binding TypeStr}"
+                                    ElementStyle="{StaticResource BaseCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate NameDescription}"
+                                    Width="300"
+                                    Binding="{Binding NameDescription}"
+                                    ElementStyle="{StaticResource BaseCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate CountInProduct}" 
+                                    Width="100"
+                                    Binding="{Binding CountInProduct}"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate StockAvailable}" 
+                                    Width="60"
+                                    Binding="{Binding StockAvailable}"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate Storage}" 
+                                    Width="80"
+                                    Binding="{Binding Storage}"
+                                    ElementStyle="{StaticResource BaseCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate ProductionReservation}" 
+                                    Width="120"
+                                    Binding="{Binding ProductionReservation}"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate ToOrder}" 
+                                    Width="70"
+                                    Binding="{Binding OrderCount}"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+                <DataGridTemplateColumn Header="{loc:Translate Ordered}" 
+                                        Width="70">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding OrderedStr}" 
+                                       Foreground="{Binding OrderedColorBrush}" 
+                                       TextAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontWeight="Bold"
+                                       />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{loc:Translate Action}" 
+                                            Width="45">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="30"
+                                    Command="{Binding Data.CreateOrderCommand, Source={StaticResource Proxy}}"
+                                    CommandParameter="{Binding}"
+                                    Visibility="{Binding CreateOrderButtonVisibility}"
+                                    ToolTip="{loc:Translate CreateOrder}"
+                                    Content=">>"
+                                    />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

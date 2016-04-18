@@ -1,0 +1,37 @@
+***** TOODO list of CommonBase framework *****
+
+** CommonBase
+- Console Arguments (base implementation)
+- Extenders
+
+** CommonBase.Application
+- extend ApplicationInfo
+- implement ApplicationContext.ApplicationPath, ApplicationContext.RegistryKey
+
+** CommonBase.Log
+- other types of log
+  - implement log to File
+  - Log to system Event Log
+  - Log to Control
+- log readers (like HTTP log reader - through HTTP protocol)
+
+** CommonBase.WCF (WCF helpers)
+
+
+** CommonBase.UI (Common controls - WPF ?)
+- MessageDialogs
+- SplashScreen
+
+** CommonBase.Data
+- database access
+- OR mapping
+
+???? - maybe future
+(
+	** CommonBase.Net
+	- WCF helpers
+	- Communication Objects
+)
+
+Code cleaning
+- remove unused Usings

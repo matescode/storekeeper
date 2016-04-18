@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="windows-1250"?>
+<dat:dataPack id="Za001" ico="12345678" application="StwTest" version="2.0" note="Export zásob"  
+xmlns:dat="http://www.stormware.cz/schema/version_2/data.xsd"  
+xmlns:stk="http://www.stormware.cz/schema/version_2/stock.xsd" 
+xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd" 
+xmlns:lStk="http://www.stormware.cz/schema/version_2/list_stock.xsd"  
+xmlns:lAdb="http://www.stormware.cz/schema/version_2/list_addBook.xsd"
+xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd">
+
+
+  <dat:dataPackItem id="address01" version="2.0"> 
+    <!-- export adresáře  -->
+    <lAdb:listAddressBookRequest version="2.0" addressBookVersion="2.0">
+      <lAdb:requestAddressBook />
+    </lAdb:listAddressBookRequest>
+  </dat:dataPackItem>
+
+  <dat:dataPackItem id="storage02" version="2.0">
+  <!-- export zásoby -->
+    <lStk:listStockRequest version="2.0" stockVersion="2.0">
+      <lStk:requestStock>
+        <ftr:filter>
+          <ftr:storage>
+            <typ:ids>Flajzar</typ:ids>
+          </ftr:storage>
+          <ftr:lastChanges>**TIMESTAMP**</ftr:lastChanges>
+        </ftr:filter>
+      </lStk:requestStock>
+    <!--
+    <lStk:requestStock>
+        <ftr:filter>
+          <ftr:storage>
+            <typ:ids>ZBOŽÍ/Nábytek/Kuchyně</typ:ids>
+          </ftr:storage>
+        </ftr:filter>
+      </lStk:requestStock>
+    -->
+    </lStk:listStockRequest>
+  </dat:dataPackItem>
+  
+</dat:dataPack>

@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="StoreKeeper.App.Controls.ExternStorageMaterialListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:CommonBase.UI.Localization;assembly=CommonBase.UI"
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0, 0, 0, 10">
+            <Label Content="{loc:Translate SelectedStorages}" />
+            <Label Content=":" />
+            <ComboBox Width="150"
+                      ItemsSource="{Binding StorageListData}"
+                      SelectedItem="{Binding SelectedStorageItem}"
+                      Margin="5, 0, 10, 0"
+                      />
+        </StackPanel>
+        <DataGrid AutoGenerateColumns="False"
+                    AlternatingRowBackground="LightGray"
+                    Grid.Row="1"
+                    Margin="0,5,0,0"
+                    SelectionUnit="FullRow"
+                    SelectionMode="Single"
+                    CanUserResizeColumns="True"
+                    CanUserSortColumns="True"
+                    CanUserAddRows="False"
+                    CanUserDeleteRows="False"
+                    CanUserReorderColumns="False"
+                    EnableRowVirtualization="True"
+                    VirtualizingStackPanel.IsVirtualizing="True"
+                    ItemsSource="{Binding DataView}"
+                    HeadersVisibility="Column"
+                    Name="MainGrid"
+                    HorizontalScrollBarVisibility="Auto"
+                    VerticalScrollBarVisibility="Auto"
+                    IsSynchronizedWithCurrentItem="True"
+                    >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="25" 
+                                        CanUserSort="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                      IsEnabled="{Binding IsSelectEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTextColumn Header="{loc:Translate Code}" 
+                                    Width="60"
+                                    Binding="{Binding Code}"
+                                    CanUserSort="True"
+                                    IsReadOnly="True"
+                                    ElementStyle="{StaticResource BaseCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate NameDescription}"
+                                    Width="250"
+                                    Binding="{Binding NameDescription}"
+                                    IsReadOnly="True"
+                                    ElementStyle="{StaticResource BaseCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate DeliveredCount}" 
+                                    Width="80"
+                                    Binding="{Binding CurrentCount}"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate Company}" 
+                                    Width="100"
+                                    Binding="{Binding Company}"
+                                    IsReadOnly="True"
+                                    ElementStyle="{StaticResource BaseCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate StorageCount}" 
+                                    Width="70"
+                                    Binding="{Binding CentralStorageCount}"
+                                    IsReadOnly="True"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate ToDeliverCount}" 
+                                    Width="70"
+                                    Binding="{Binding DeliverCount}"
+                                    IsReadOnly="True"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+                
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <CheckBox Content="{loc:Translate SelectAll}"
+                      Margin="5, 0, 20, 0"
+                      IsChecked="{Binding IsSelectedAll}"
+                      IsEnabled="{Binding IsSelectAllEnabled}"
+                      HorizontalAlignment="Center" 
+                      VerticalAlignment="Center" />
+            
+            <Button Height="25"
+                        Width="150"
+                        Grid.Row="1"
+                        Margin="5"
+                        Content="{loc:Translate MissingMaterialPrint}"
+                        Command="{Binding MissingMaterialPrintCommand}"
+                        CommandParameter="{Binding ElementName=StorageList, Path=SelectedItem}"
+                        HorizontalAlignment="Left"
+                        />
+
+            <Button Height="25"
+                    Width="150"
+                    Content="{loc:Translate PrintDeliveryNote}"
+                    Command="{Binding PrintDeliveryNoteCommand}"
+                    />
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Localization Culture="cs-CZ">
+  <!-- Localizable strings -->
+  <String Key="Ok">OK</String>
+  <String Key="Cancel">Storno</String>
+  <String Key="Yes">Ano</String>
+  <String Key="No">Ne</String>
+  <String Key="Retry">Opakovat</String>
+  <String Key="Close">Zavřít</String>
+  <String Key="Clear">Smazat</String>
+  <String Key="Save">Uložit</String>
+  <String Key="File">Soubor</String>
+  <String Key="Exit">Konec</String>
+  <String Key="Settings">Nastavení</String>
+  <String Key="About">O programu</String>
+  <String Key="Search">Hledat</String>
+  <String Key="Help">Nápověda</String>
+  <String Key="Options">Volby</String>
+
+  <String Key="Version">Verze</String>
+  <String Key="AuthorizedUser">Oprávněný uživatel</String>
+  <String Key="SLA">Licenční ujednání</String>
+  <String Key="Eula1">Tato licence umožňuje oprávněnému uživateli volné používání programu pouze k soukromým účelům. Licence neomezuje počet počítačů, na kterých bude program nainstalován. Bez souhlasu autora není možné program dále modifikovat, ani poskytovat třetím osobám.</String>
+  <String Key="Copyright1">Copyright © Martin Chytil 2014. Všechna práva vyhrazena.</String>
+
+  <!-- Strings with dots -->
+  <String Key="SettingsDots">Nastavení ...</String>
+  <String Key="AboutDots">O Aplikaci ...</String>
+  <String Key="OptionsDots">Volby ...</String>
+</Localization>

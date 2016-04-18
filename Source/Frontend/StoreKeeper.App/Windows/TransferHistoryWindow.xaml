@@ -1,0 +1,59 @@
+﻿<Window x:Class="StoreKeeper.App.Windows.TransferHistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctl="clr-namespace:StoreKeeper.App.Controls"
+        xmlns:loc="clr-namespace:CommonBase.UI.Localization;assembly=CommonBase.UI"
+        Title="{Binding WindowTitle}"
+        Width="640" Height="480"
+        MinWidth="640" MinHeight="480"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" 
+              HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="15" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Content="{loc:Translate ArticleName}" 
+                   />
+
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   Content="{loc:Translate StorageName}" 
+                   />
+
+            <Label Grid.Row="0"
+                   Grid.Column="1"
+                   Content=":" 
+                   />
+
+            <Label Grid.Row="1"
+                   Grid.Column="1"
+                   Content=":" 
+                   />
+
+            <Label Grid.Row="0"
+                   Grid.Column="2"
+                   Content="{Binding ArticleTitle}" 
+                   />
+
+            <Label Grid.Row="1"
+                   Grid.Column="2"
+                   Content="{Binding StorageTitle}" 
+                   />
+        </Grid>
+
+        <ctl:TransferHistoryControl Grid.Row="1" DataContext="{Binding}" />
+    </Grid>
+</Window>

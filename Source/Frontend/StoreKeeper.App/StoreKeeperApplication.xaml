@@ -1,0 +1,14 @@
+﻿<Application x:Class="StoreKeeper.App.StoreKeeperApplication"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/StoreKeeper.App;Component/Resources/Styles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/CommonBase.Resources;Component/ResourceList.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/StoreKeeper.Resources;Component/StoreKeeperResourceList.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

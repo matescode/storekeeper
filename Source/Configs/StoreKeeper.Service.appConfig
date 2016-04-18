@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AppConfig>
+  <Property Name="AccountingDataRootFolder" Value="C:\Pohoda" />
+  <Property Name="SafetyThresholdInMinutes" Value="2" />
+  <Property Name="ServerPort" Value="8601" />
+</AppConfig>

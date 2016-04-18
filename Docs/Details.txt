@@ -1,0 +1,27 @@
+Čau, posílám v příloze. Tam kde je to oranžové - jsou texty z Pohody (kód je kód, skladem je stav zásoby atd...). Pokud je v závorce (stav zásoby) tak nevím, jestli se to bude vytahovat z pohody, spíš ne, protože se s tím bude počítat.
+Objednat zboží se nebude tahat z Pohody.
+Externích skladů může být více. Tam se z pohody nic tahat nebude.Zatím je jen Jablo, ale můžeme si přidat pak třeba MESIT, nebo další. Ty si definujeme sami.
+
+-----------------------
+
+1) budou tu úplně všechny výrobky a součástky?
+- pokud ano, budou se zobrazovat všechny na jednou, nebo by tam mělo být nějaké stránkování, příp. i nějaké složitější filtrování?
+- pokud ne, co tu teda bude zobrazeno
+
+
+- nebudou, máme sklady rozdělené na Výroba, Prodejna - z Výroby bude vše, ze skladu Prodejna bude jen Naše výroba a Rybařina - to jsou podsložky
+   - zobrazovat se mohou najednou
+ 
+
+2) Dodavatel - v Pohodě mi nejde u výrobků nastavit dodavatele, tzn. neznám ani sloupec Dodavatelský kód, ani Dodavatel
+- otázka, dělám něco v Pohodě špatně?
+
+- Tam nevím, podívám se v pondělí nebo úterý, ale vím že na kartě Dodavatel je, někde pod min. zásobama a tak.
+ 
+
+3) Sloupec cena - v Pohodě jsou minimálně 2 druhy cen - nákupní a prodejní, dále u prodejních cen se uplatňují různé individuální slevy, jaká se tady teda má zobrazovat cena?
+
+- Prodejní, slevy nás zajímat nebudou
+
+
+-----------------------

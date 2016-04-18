@@ -1,0 +1,114 @@
+StoreKeeper - instalace
+-----------------------------
+
+Kroky A, B, C je nutné dělat postupně v uvedeném pořadí. Všechny výchozí parametry jsou nastaveny jako by byl server instalován přímo na disk C.
+Krok A-8 je volitelný a závisí na administrátorovi serveru.
+
+A) Server
+------------
+1) Rozbalit StoreKeeper.Server.rar do libovolného adresáře, např. C:\, tím vznikce adresář C:\StoreKeeper.Server (dále "Install_dir")
+
+2) Zkontrolovat, že do adresáře Install_dir\Export je umožněn zápis
+
+3) Upravit soubor Install_dir\Export\PohodaExport.ini
+  tvar souboru: 
+  ---
+  [XML]
+  input_xml="Install_dir\Export\Storage.xml"
+  response_xml="Install_dir\Export\Storage_data.xml"
+  database=<databáze>
+  format_output=1
+  XSLT_output="Install_dir\Export\Storage.xsl"
+  ---
+  
+  <databáze> = název databáze, ze které se budou exportovat data, např. StwPh_26916436_2014
+  
+  !!! pozor - pokud se každý rok vytváří nová databáze, je nutné tento soubor na začátku roku vždy změnit na aktuálně platnou databázi
+
+4) Upravit soubor Install_dir\Export\ExportStorage.cmd
+   tvar souboru: 
+   ---
+   call "<pohoda_exe>" /XML "<uživatel>" "<heslo>" "<ini_soubor>"
+   ---
+   
+   <pohoda_exe> = cesta k souboru Pohoda.exe na lokálním počítači, např. C:\POHODA_SQL\Pohoda.exe
+   <uživatel> = uživatel, který má povolenou XML komunikaci
+   <heslo> = heslo uživatele <uživatel>
+   <ini_soubor> = cesta k souboru Install_dir\Export\PohodaExport.ini
+   
+5) Zkontrolovat, případně změnit IČ společnosti v souboru Install_dir\Export\RequestTemplate.xml
+  - řádek číslo 2: element dat:dataPack, atribut ico="<ico>"
+  <ico> = IČ společnosti, pod kterou spadá daná databáze Pohody, ze které se budou exportovat data
+  - aktuálně nastaveno 26916436
+
+6) spustit Install_dir\_InstallServer.cmd
+
+7) spustit serverovou Management Console - Services
+   spustit službu StoreKeeper Service
+   
+8) Nastavit zálohování na soubory:
+    Install_dir\ServerData\ServerDatabase.sqlite
+    Install_dir\ServerData\StoreKeeper.Server.sqlite
+    
+    
+Odinstalace serveru:
+---------------------
+- spustit serverovou Management Console - Services
+- zastavit službu StoreKeeper Service
+- spustit Install_dir\_UninstallServer.cmd
+
+
+
+B) Vytvoření iniciální databáze
+------------------------------------
+1) Spustit Install_Dir\Export\ExportStorage.cmd
+
+2) Spustit Install_Dir\StoreKeeper.DBIndexer.exe
+
+3) Přesunout soubor Install_Dir\ServerData\StoreKeeper.Client.sqlite do klientských aplikací
+
+
+   
+C) Klientské aplikace
+-------------------------
+1) Rozbalit StoreKeeper.Application.rar do libovolného adresáře, např. C:\, tím vznikce adresář C:\StoreKeeper.Application (dále "Install_dir_client")
+
+2) zkopírovat soubor StoreKeeper.Client.sqlite z kroku B-3 do adresáře Install_dir_client\ClientData
+
+3) spustit Install_dir_client\_InstallClient.cmd
+   - musí být spouštěn jako uživatel s rolí Správce počítače, protože provádí systémovou rezervaci HTTP portů (přímo jako uživatel, nebo např. přes command line)
+
+4) spustit přes Install_dir_client\StoreKeeper.App.exe
+
+5) menu Nastavení / Volby / karta Přístup k serveru, nastavit:
+   - IP adresa serveru, na který byl nainstalován StoreKeeper.Server (sekce A)
+     - může být i registrované jméno serveru (pozor na DNS záznam)
+   - uživatel pod kterým bude aplikace komunikovat se serverovou aplikací
+   - bezpečnostní token - generovaný kód k potvrzení identity uživatele
+   
+   uložit, restartovat aplikaci
+   
+6) ověřit správnost připojení k serveru - zelená ikonka připojení k serveru ve stavovém řádku aplikace
+
+
+
+   
+Základní aplikace obsahuje 2 výchozí uživatele: 
+
+Uživatel              Bezpečnostní token
+Libor                 90D2103F-5958-450C-B248-B8C022E54A5B
+Radek                 EE05F575-6816-461D-8444-C1D9FBE8350E
+
+Vytvoření nové kopie klientské aplikace pro dalšího uživatele
+----------------------------------------------------
+1) spustit přes Install_dir_client\StoreKeeper.App.exe
+
+2) vyvolat konzoli serveru CTRL + ALT + A, karta Uživatelé
+
+3) vytvořit nového uživatele
+
+4) projít kroky C-1 až C-6
+   - v kroku C-2 vzít zdrojový soubor z již existující klientské instalace v adresáři Install_dir_client\ClientData\StoreKeeper.client.sqlite
+   - v kroku C-5 použít uživatele a bezpečnostní token z z předchozího kroku
+
+

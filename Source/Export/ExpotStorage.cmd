@@ -1,0 +1,1 @@
+call "C:\POHODA_SQL\Pohoda.exe" /XML "soft" "3bjIiEUEIkje" "C:\StoreKeeper.Server\Export\PohodaExport.ini"

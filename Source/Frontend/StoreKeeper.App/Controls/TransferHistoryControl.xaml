@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="StoreKeeper.App.Controls.TransferHistoryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:CommonBase.UI.Localization;assembly=CommonBase.UI"
+             >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False"
+                    AlternatingRowBackground="LightGray"
+                    Grid.Row="0"
+                    Margin="0, 0, 0, 5"
+                    SelectionUnit="FullRow"
+                    SelectionMode="Single"
+                    CanUserResizeColumns="True"
+                    CanUserSortColumns="False"
+                    CanUserAddRows="False"
+                    IsReadOnly="True"
+                    CanUserDeleteRows="False"
+                    CanUserReorderColumns="False"
+                    EnableRowVirtualization="True"
+                    ItemsSource="{Binding ItemsData}"
+                    HeadersVisibility="Column"
+                    Name="MainGrid"
+                    HorizontalScrollBarVisibility="Auto"
+                    VerticalScrollBarVisibility="Auto"
+                    IsSynchronizedWithCurrentItem="True"
+                    VirtualizingStackPanel.IsVirtualizing="True"
+                    >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{loc:Translate Date}" 
+                                    Width="120"
+                                    Binding="{Binding SendingDate}"
+                                    ElementStyle="{StaticResource BaseCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate TransferedCount}" 
+                                    Width="100"
+                                    Binding="{Binding TransferedCount}"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate CountBeforeDeliver}"
+                                    Width="100"
+                                    Binding="{Binding LatestCount}"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate TotalCount}"
+                                    Width="100"
+                                    Binding="{Binding TotalCount}"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Height="25"
+                Width="100"
+                Grid.Row="1"
+                Margin="5"
+                Content="{loc:Translate Print}"
+                Command="{Binding PrintCommand}"
+                CommandParameter="{Binding ElementName=MainGrid}"
+                HorizontalAlignment="Left"
+                />
+
+    </Grid>
+</UserControl>

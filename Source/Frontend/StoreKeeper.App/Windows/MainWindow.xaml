@@ -1,0 +1,201 @@
+﻿<Window x:Class="StoreKeeper.App.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:StoreKeeper.App.Controls"
+        xmlns:loc="clr-namespace:CommonBase.UI.Localization;assembly=CommonBase.UI"
+        Title="StoreKeeper" Height="768" Width="1024"
+        MinWidth="1024"
+        MinHeight="768"
+        x:Name="TopMostWindow" 
+        WindowStartupLocation="CenterScreen"
+        Closing="MainWindowClosing"
+        >
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static controls:Commands.ShowLogCommand}" Executed="ShowLogCommandExecuted" />
+        <CommandBinding Command="{x:Static controls:Commands.ShowServerAdministrationCommand}" Executed="ShowServerAdministrationCommandExecuted" CanExecute="CanExecuteShowServerAdministrationCommand" />
+        <CommandBinding Command="{x:Static controls:Commands.StartSearchCommand}" Executed="StartSearchCommandExecuted" />
+        <CommandBinding Command="{x:Static controls:Commands.CalculationCommand}" Executed="CalculationCommandExecuted" CanExecute="CanExecuteCalculationCommand" />
+        <CommandBinding Command="{x:Static controls:Commands.SyncCommand}" Executed="SyncCommandExecuted" CanExecute="CanExecuteSyncCommand" />
+        <CommandBinding Command="{x:Static controls:Commands.UpdateCommand}" Executed="UpdateCommandExecuted" CanExecute="CanExecuteUpdateMethod" />
+        <CommandBinding Command="{x:Static controls:Commands.SyncAllCommand}" Executed="SyncAllCommandExecuted" CanExecute="CanExecuteSyncAllCommand" />
+    </Window.CommandBindings>
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <DockPanel DockPanel.Dock="Top"
+                       Background="#EEEEEE"
+                       LastChildFill="False"
+                       >
+                <Menu Background="#EEEEEE" Margin="10, 10, 0, 0" DockPanel.Dock="Left">
+                    <MenuItem Header="{loc:Translate File}">
+                        <MenuItem Header="{loc:Translate CalcAndSave}" Command="{x:Static controls:Commands.CalculationCommand}" InputGestureText="Ctrl+S">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource IconSave}" Height="16" Width="16" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Header="{loc:Translate PohodaSync}" Command="{x:Static controls:Commands.SyncCommand}" InputGestureText="Ctrl+P">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource IconPohoda}" Height="24" Width="24" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="{loc:Translate UpdateData}" Command="{x:Static controls:Commands.UpdateCommand}" InputGestureText="Ctrl+U">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource IconUpdate}" Height="16" Width="16" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Header="{loc:Translate Special}">
+                            <MenuItem Header="{loc:Translate PohodaReload}" Command="{x:Static controls:Commands.SyncAllCommand}">
+                                <MenuItem.Icon>
+                                    <Image Source="{StaticResource IconPohoda}" Height="24" Width="24" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="{loc:Translate ShowLog}" Command="{x:Static controls:Commands.ShowLogCommand}"/>
+                            <MenuItem Header="{loc:Translate ShowAdministration}" Command="{x:Static controls:Commands.ShowServerAdministrationCommand}"/>
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Header="{loc:Translate Exit}" Command="{x:Static controls:Commands.ApplicationExitCommand}">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource IconExit}" Height="16" Width="16" />
+                            </MenuItem.Icon>
+                            <MenuItem.CommandBindings>
+                                <CommandBinding Command="{x:Static controls:Commands.ApplicationExitCommand}" Executed="ApplicationExitCommandExecuted" />
+                            </MenuItem.CommandBindings>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="{loc:Translate Settings}">
+                        <MenuItem Header="{loc:Translate ExternStoragesDots}" Command="{x:Static controls:Commands.EditStoragesCommand}">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource IconExternStorage}" Height="16" Width="16" />
+                            </MenuItem.Icon>
+                            <MenuItem.CommandBindings>
+                                <CommandBinding Command="{x:Static controls:Commands.EditStoragesCommand}" Executed="EditStoragesCommandExecuted" CanExecute="CanExecuteEditStoragesCommand" />
+                            </MenuItem.CommandBindings>
+                        </MenuItem>
+                        <MenuItem Header="{loc:Translate OptionsDots}" Command="{x:Static controls:Commands.ShowOptionsCommand}">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource IconSettings}" Height="16" Width="16" />
+                            </MenuItem.Icon>
+                            <MenuItem.CommandBindings>
+                                <CommandBinding Command="{x:Static controls:Commands.ShowOptionsCommand}" Executed="ShowOptionsCommandExecuted" />
+                            </MenuItem.CommandBindings>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="{loc:Translate Help}">
+                        <MenuItem Header="{loc:Translate AboutDots}" Command="{x:Static controls:Commands.ShowAboutWindowCommand}">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource IconInfo}" Height="16" Width="16" />
+                            </MenuItem.Icon>
+                            <MenuItem.CommandBindings>
+                                <CommandBinding Command="{x:Static controls:Commands.ShowAboutWindowCommand}" Executed="ShowAboutWindowCommandExecuted" />
+                            </MenuItem.CommandBindings>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Height="25" DockPanel.Dock="Right" Margin="0, 0, 20, 0">
+                    <Label Content="{loc:Translate CodeColon}" Height="25" VerticalAlignment="Bottom" />
+                    <TextBox x:Name="SearchBox" Width="80" Height="25" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" Margin="0,0,7,0" />
+                    <Button x:Name="SearchButton" 
+                            Command="{x:Static controls:Commands.SearchCommand}" 
+                            VerticalContentAlignment="Top" 
+                            IsDefault="{Binding ElementName=SearchBox, Path=IsKeyboardFocused}"
+                            ToolTip="{loc:Translate Search}">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" Margin="5,-3,0,0" Height="25">
+                                <Image Width="16" Height="16" Source="{StaticResource IconSearch}" />
+                                <Label Content="{loc:Translate Search}" Height="25" VerticalAlignment="Top" />
+                            </StackPanel>
+                        </Button.Content>
+                        <Button.CommandBindings>
+                            <CommandBinding Command="{x:Static controls:Commands.SearchCommand}" Executed="SearchCommandExecuted" CanExecute="CanExecuteSearchCommand" />
+                        </Button.CommandBindings>
+                    </Button>
+                </StackPanel>
+            </DockPanel>
+            <StatusBar DockPanel.Dock="Bottom" Height="25">
+                <StatusBarItem HorizontalAlignment="Left">
+                    <controls:InformationPanelControl DataContext="{Binding}" Margin="20,0,0,0" x:Name="InfoPanelControl" />
+                </StatusBarItem>
+                <StatusBarItem HorizontalAlignment="Right" >
+                    <controls:TodayControl DataContext="{Binding}" Margin="0,0,20,0" />
+                </StatusBarItem>
+            </StatusBar>
+            <TabControl x:Name="MainTabControl">
+                <TabControl.Style>
+                    <Style TargetType="{x:Type TabControl}">
+                        <Setter Property="OverridesDefaultStyle" Value="True" />
+                        <Setter Property="SnapsToDevicePixels" Value="False" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TabControl}">
+                                    <Grid KeyboardNavigation.TabNavigation="Local" ShowGridLines="False">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="75" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Border Grid.Row="0" Background="#EEEEEE">
+                                            <TabPanel Name="HeaderPanel" IsItemsHost="True" VerticalAlignment="Bottom" Margin="25, 0, 0, 0" />
+                                        </Border>
+                                        <Border BorderBrush="DodgerBlue" BorderThickness="0,3,0,0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1"
+                                        KeyboardNavigation.TabIndex="2"
+                                        KeyboardNavigation.TabNavigation="Local">
+                                            <ContentPresenter ContentSource="SelectedContent" Margin="5" />
+                                        </Border>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabControl.Style>
+                <TabControl.Resources>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TabItem">
+                                    <Grid Name="Panel" Width="200" Height="50">
+                                        <TextBlock Name="Header" TextAlignment="Center" VerticalAlignment="Center" FontSize="18">
+                                        <ContentPresenter x:Name="ContentSite"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"
+                                            ContentSource="Header"
+                                            />
+                                        </TextBlock>
+                                    </Grid>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="Panel" Property="Background" Value="DodgerBlue" />
+                                            <Setter TargetName="Header" Property="Foreground" Value="White" />
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="False">
+                                            <Setter TargetName="Panel" Property="Background" Value="#EEEEEE" />
+                                            <Setter TargetName="Header" Property="Foreground" Value="DodgerBlue" />
+                                        </Trigger>
+                                        <Trigger Property="Tag" Value="First">
+                                            <Setter TargetName="Panel" Property="Margin" Value="25,0,0,0" />
+                                        </Trigger>
+                                        <Trigger Property="Tag" Value="TestPage">
+                                            <Setter TargetName="Panel" Property="Width" Value="100" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabControl.Resources>
+                <TabItem Header="{loc:Translate ProductionOrders}">
+                    <controls:ProductOrderList x:Name="ProductOrderList" DataContext="{Binding ProductOrdersData}" />
+                </TabItem>
+                <TabItem Header="{loc:Translate Material}">
+                    <controls:MaterialListControl x:Name="MaterialList" DataContext="{Binding MaterialsData}" />
+                </TabItem>
+                <TabItem Header="{loc:Translate MaterialOrders}">
+                    <controls:MaterialOrderListControl x:Name="MaterialOrderList" DataContext="{Binding MaterialOrdersData}" />
+                </TabItem>
+                <TabItem Header="{loc:Translate ExternStorages}">
+                    <controls:ExternStorageMaterialListControl x:Name="ExternStorageList" DataContext="{Binding ExternStorageMaterialsData}" />
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</Window>

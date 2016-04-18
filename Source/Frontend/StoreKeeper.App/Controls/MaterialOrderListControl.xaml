@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="StoreKeeper.App.Controls.MaterialOrderListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ctl="clr-namespace:StoreKeeper.App.Controls"
+             xmlns:loc="clr-namespace:CommonBase.UI.Localization;assembly=CommonBase.UI"
+             xmlns:vm="clr-namespace:StoreKeeper.App.ViewModels"
+             >
+    <Grid>
+        <Grid.Resources>
+            <vm:BindingProxy x:Key="Proxy" Data="{Binding}" />
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <DataGrid 
+                AutoGenerateColumns="False"
+                AlternatingRowBackground="LightGray"
+                Grid.Row="0"
+                Margin="0, 0, 0, 5"
+                SelectionUnit="FullRow"
+                SelectionMode="Single"
+                CanUserResizeColumns="True"
+                CanUserSortColumns="True"
+                CanUserAddRows="False"
+                IsReadOnly="False"
+                CanUserDeleteRows="False"
+                CanUserReorderColumns="False"
+                EnableRowVirtualization="True"
+                ItemsSource="{Binding Data}"
+                HeadersVisibility="Column"
+                Name="MainGrid"
+                HorizontalScrollBarVisibility="Auto"
+                VerticalScrollBarVisibility="Auto"
+                IsSynchronizedWithCurrentItem="True"
+                VirtualizingStackPanel.IsVirtualizing="True"
+                >
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="{loc:Translate Code}" 
+                                    Width="60"
+                                    Binding="{Binding Code}"
+                                    CanUserSort="True"
+                                    IsReadOnly="True"
+                                    ElementStyle="{StaticResource BaseCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate NameDescription}"
+                                    Width="300"
+                                    Binding="{Binding NameDescription}"
+                                    ElementStyle="{StaticResource BaseCellStyle}"
+                                    IsReadOnly="True"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate StockAvailable}" 
+                                    Width="80"
+                                    Binding="{Binding StockAvailable}"
+                                    IsReadOnly="True"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate StockAvailableEx}" 
+                                    Width="110"
+                                    Binding="{Binding StockAvailableEx}"
+                                    IsReadOnly="True"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+                <DataGridTextColumn Header="{loc:Translate MustBeOrdered}" 
+                                    Width="100"
+                                    Binding="{Binding OrderedCount}"
+                                    IsReadOnly="True"
+                                    ElementStyle="{StaticResource RightAlignmentCellStyle}"
+                                    />
+
+                <DataGridTemplateColumn Header="{loc:Translate Ordered}" 
+                                        Width="70"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding OrderedStr}" 
+                                       Foreground="{Binding OrderedColorBrush}" 
+                                       TextAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontWeight="Bold"
+                                       />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="1"
+                        Orientation="Horizontal">
+
+            <Button Height="25"
+                    Width="150"
+                    Grid.Row="1"
+                    Margin="5"
+                    Content="{loc:Translate MissingMaterialPrint}"
+                    ToolTip="{loc:Translate MissingMaterialPrint}"
+                    Command="{Binding PrintCommand}"
+                    CommandParameter="{Binding ElementName=MainGrid}"
+                    HorizontalAlignment="Left"
+                    />
+        </StackPanel>
+
+    </Grid>
+</UserControl>

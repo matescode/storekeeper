@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Localization Culture="en-US">
+  <!-- Localizable strings -->
+  <String Key="Ok">OK</String>
+  <String Key="Cancel">Cancel</String>
+  <String Key="Yes">Yes</String>
+  <String Key="No">No</String>
+  <String Key="Retry">Retry</String>
+  <String Key="Close">Close</String>
+  <String Key="Clear">Clear</String>
+  <String Key="Save">Save</String>
+  <String Key="File">File</String>
+  <String Key="Exit">Exit</String>
+  <String Key="Settings">Settings</String>
+  <String Key="About">About application</String>
+  <String Key="Search">Search</String>
+  <String Key="Help">Help</String>
+  <String Key="Options">Options</String>
+  
+  <String Key="Version">Version</String>
+  <String Key="AuthorizedUser">Authorized user</String>
+  <String Key="SLA">Licence agreement</String>
+  <String Key="Eula1">This licence allows to authorized user free usage of this SOFTWARE PRODUCT only to private purposes. The licence does not limit the number of computers on which the SOFTWARE PRODUCT is installed. Without author's agreement it is not possible to modify program components nor to distribute the SOFTWARE PRODUCT to third party users.</String>
+  <String Key="Copyright1">Copyright © Martin Chytil 2014. All rights reserverd.</String>
+
+  <!-- Strings with dots -->
+  <String Key="SettingsDots">Settings ...</String>
+  <String Key="AboutDots">About ...</String>
+  <String Key="OptionsDots">Options ...</String>
+</Localization>

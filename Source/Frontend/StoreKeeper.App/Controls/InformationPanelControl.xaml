@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="StoreKeeper.App.Controls.InformationPanelControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:CommonBase.UI.Localization;assembly=CommonBase.UI"
+             >
+    <Grid DataContext="{Binding InformationPanelModel}">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{loc:Translate ServerConnectionStatus}" />
+            <TextBlock Text=":" Margin="5, 0" />
+            <Image Width="16" Height="16" Source="{Binding ConnectionStatusIconSource}" />
+            <TextBlock Text="{Binding ConnectionStatus}" />
+            <TextBlock Width="20" />
+            <TextBlock Text="{loc:Translate Database}" />
+            <TextBlock Text=":" Margin="5, 0" />
+            <Image Width="16" Height="16" Source="{Binding DatabaseStatusIconSource}" />
+            <TextBlock Text="{Binding DatabaseConnectionStatus}" />
+            <TextBlock Width="50" />
+            <StackPanel Orientation="Horizontal" Name="InformationIconStack" Visibility="Hidden">
+            <Image Width="16" Height="16" Source="{StaticResource IconWarning}" 
+                   ToolTip="{loc:Translate NeedCalculation}" 
+                   Visibility="{Binding CalculationWarningVisibility}"
+                   Margin="0, 0, 7, 0"
+                   />
+            <TextBlock Text="{loc:Translate NeedCalculation}" 
+                       Visibility="{Binding CalculationWarningVisibility}"
+                       Foreground="Red"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"
+                       />
+            
+            <Image Width="16" Height="16" Source="{StaticResource IconUpdate}" 
+                   ToolTip="{loc:Translate NewDataAvailable}" 
+                   Visibility="{Binding NewDataInfoVisibility}"
+                   Margin="20, 0, 7, 0"
+                   />
+            
+            <TextBlock Text="{loc:Translate NewDataAvailable}" 
+                       Visibility="{Binding NewDataInfoVisibility}"
+                       Foreground="ForestGreen"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"
+                       />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

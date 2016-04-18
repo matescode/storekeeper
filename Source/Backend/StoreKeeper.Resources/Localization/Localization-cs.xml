@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Localization Culture="cs-CZ">
+  <String Key="ProductionOrders">Objednávky do výroby</String>
+  <String Key="Material">Materiál</String>
+  <String Key="MaterialOrders">Objednávky materiálu</String>
+  <String Key="ExternStorages">Externí sklady</String>
+  <String Key="LogWindowTitle">Aplikační log</String>
+  <String Key="PohodaSync">Aktualizovat s Pohodou</String>
+  <String Key="BackupToServer">Zálohovat na server</String>
+
+  <!-- columns names -->
+  <String Key="Code">Kód</String>
+  <String Key="SupplierCode">Dodavatelský kód</String>
+  <String Key="Type">Typ</String>
+  <String Key="NameDescription">Popis (název)</String>
+  <String Key="StockAvailable">Skladem</String>
+  <String Key="CountToOrder">Do Objednávky</String>
+  <String Key="OrderedCount">Objednáno</String>
+  <String Key="InOrderedProducts">Výrobků</String>
+  <String Key="ExternStorageCount">Externí firma</String>
+  <String Key="TransferHistory">Historie převodu</String>
+  <String Key="Supplier">Dodavatel</String>
+  <String Key="Price">Cena</String>
+  <String Key="Priority">Priorita</String>
+  <String Key="PossibleMakeCount">Lze vyrobit</String>
+  <String Key="MustBeOrdered">Nutné množství</String>
+  <String Key="OrderTerm">Termín objednávky</String>
+  <String Key="PlannedTerm">Plánovaný termín</String>
+  <String Key="EndTerm">Koncový termín</String>
+  <String Key="Color">Barva</String>
+  <String Key="Done">Vyřízeno</String>
+  <String Key="CountInProduct">Kusů ve výrobku</String>
+  <String Key="Storage">Sklad</String>
+  <String Key="ProductionReservation">Rezervace do výroby</String>
+  <String Key="ToOrder">Objednat</String>
+  <String Key="Ordered">Objednáno</String>
+  <String Key="DeliveredCount">Dodáno (skl.)</String>
+  <String Key="Company">Firma</String>
+  <String Key="StorageCount">Na skladě</String>
+  <String Key="ToDeliverCount">Dodat</String>
+  <String Key="MaterialTransfer">Převod</String>
+  <String Key="Date">Datum</String>
+  <String Key="TransferedCount">Zasláno</String>
+  <String Key="CountBeforeDeliver">Před odesláním</String>
+  <String Key="TotalCount">Celkem</String>
+  <String Key="MissingMaterialPrint">Tisk chybějícího materiálu</String>
+  <String Key="PrintMaterialOrders">Tisk objednávek materiálu</String>
+  <String Key="Print">Tisk</String>
+  <String Key="Action">Akce</String>
+  <String Key="ResolveOrder">Vyřídit objednávku</String>
+  <String Key="DeleteOrder">Smazat objednávku</String>
+  <String Key="CreateOrder">Vytvořit objednávku</String>
+  <String Key="ProductDetail">Detail produktu</String>
+  <String Key="Calculation">Výpočet</String>
+  <String Key="Calculating">Probíhá výpočet</String>
+  <String Key="ServerConnected">Připojeno</String>
+  <String Key="ServerDisconnected">Nepřipojeno</String>
+  <String Key="ServerInvalid">Server nedostupný</String>
+  <String Key="TodayStatus">Dnešní datum</String>
+  <String Key="SettingsSavedConfirmation">Změny uloženy.</String>
+  <String Key="SettingsSavedWarning">Změny nastavení se projeví až po restartu aplikace.</String>
+  
+  <String Key="ServerConnectionStatus">Stav připojení k serveru</String>
+  <String Key="PrintDeliveryNote">Tisk dodacího listu</String>
+  <String Key="ProductStorageMapping">Přiřazení výrobku do skladu</String>
+  <String Key="ProductOrderDetail">Detail objednávky do výroby</String>
+  <String Key="StorageList">Seznam skladů</String>
+  <String Key="StorageName">Název skladu</String>
+  <String Key="SettingsWindowTitle">Nastavení</String>
+  <String Key="ServerAccessSettings">Přístup k serveru</String>
+  <String Key="ApplicationSettings">Nastavení aplikace</String>
+  <String Key="ServerName">IP adresa serveru</String>
+  <String Key="Port">Port</String>
+  <String Key="User">Uživatel</String>
+  <String Key="Password">Heslo</String>
+  <String Key="NotificationPort">Notifikační port</String>
+  <String Key="MinimumSeekLength">Minimální počet znaků pro hledání</String>
+  <String Key="AccountingDataSync">Synchronizace s Pohodou</String>
+  <String Key="MergingAccountingData">Aktualizace centrálních dat</String>
+  <String Key="ArticleName">Název položky</String>
+  
+  <String Key="Card">Materiál</String>
+  <String Key="Product">Výrobek</String>
+  <String Key="Unknown">Neznámý</String>
+  
+  <String Key="Note">Poznámka</String>
+  <String Key="StockAvailableEx">Skladem vč. ext</String>
+  <String Key="SearchNotFound">Položka nenalezena!</String>
+  <String Key="CreateOrder">Vytvořit objednávku do výroby</String>
+  <String Key="OrderCreated">Objednávka byla vytvořena.</String>
+  <String Key="SetAllToStorage">Nastavit vše do skladu</String>
+  <String Key="Set">Nastavit</String>
+  <String Key="SettingStorageOperation">Nastavuji sklad</String>
+  
+  <String Key="AllStorages">Všechny sklady</String>
+  <String Key="SelectedStorages">Vybraný sklad</String>
+  <String Key="Show">Zobrazit</String>
+  <String Key="NeedCalculation">Změny - proveďte výpočet.</String>
+  <String Key="LogEntriesSaved">Záznamy logu uloženy.</String>
+  <String Key="CloseAppQuestion">Skutečně chcete ukončit aplikaci?</String>
+  <String Key="SentToPrinter">Odesláno na tiskárnu.</String>
+  <String Key="NoPages">Není co tisknout.</String>
+  
+  <String Key="MaterialOrderAlreadyExists">Objednávka materiálu již existuje.</String>
+  <String Key="MissingMaterial">Chybějící materiál</String>
+  <String Key="SelectAll">Vybrat vše</String>
+
+  <String Key="CompanyName">Společnost</String>
+  <String Key="Street">Ulice</String>
+  <String Key="Number">Č.P.</String>
+  <String Key="ZipCode">PŠČ</String>
+  <String Key="City">Město</String>
+  <String Key="CompanyId">IČ</String>
+  <String Key="TaxId">DIČ</String>
+  
+  <String Key="DeliveryNoteSettings">Dodací listy</String>
+  <String Key="Parlor">Provozovna</String>
+  <String Key="Phone">Telefon</String>
+  <String Key="CellPhone">Mobil</String>
+  <String Key="Email">E-mail</String>
+  <String Key="Web">Web</String>
+  <String Key="CreatedByName">Vystavil</String>
+  <String Key="CreatedByEmail">Vystavil (email)</String>
+
+  <String Key="AddStorage">Přidat nový sklad</String>
+  <String Key="EditStorage">Upravit sklad</String>
+
+  <String Key="DeliveryNoteWindowTitle">Detaily dodacího listu</String>
+  <String Key="NoteNumber">Dodací list č.</String>
+  <String Key="NoteDate">Vystaveno</String>
+  <String Key="OrderNumber">Objednávka č.</String>
+  <String Key="OrderDate">Datum objednávky</String>
+
+  <String Key="ShowMaterialTransfer">Zobrazit historii převodu</String>
+  <String Key="CreateExternStorage">Přidat externí sklad</String>
+  <String Key="DeleteStorage">Smazat sklad</String>
+
+  <String Key="SaveLog">Uložit log</String>
+
+  <String Key="UpdateData">Aktualizovat data</String>
+  <String Key="NewDataAvailable">Nová data k dispozici</String>
+
+  <String Key="PerformingDataUpdate">Aktualizace nových dat</String>
+  <String Key="DownloadingUpdateData">Stahování aktualizovaných dat</String>
+  <String Key="MergingUpdateData">Ukládání aktualizovaných dat</String>
+  <String Key="PerformingDataSave">Ukládám data na server</String>
+  <String Key="DataSaved">Data uložena na server.</String>
+
+  <String Key="TransfersDeleted">Detekována změna roku, všechny převody materiálu byly smazány.</String>
+
+  <String Key="ServerAdminWindowTitle">Adminstrace serveru</String>
+  <String Key="SecurityToken">Bezpečnostní token</String>
+  <String Key="ServerDatabaseInfo">Serverová databáze</String>
+  <String Key="UserManagement">Uživatelé</String>
+  <String Key="NewUser">Nový uživatel</String>
+  <String Key="LastServerUpdate">Poslední uložení</String>
+  <String Key="ResponsibleUser">Odpovědný uživatel</String>
+  <String Key="LastAccountingUpdate">Poslední aktualizace Pohody</String>
+  <String Key="DeleteUser">Smazat uživatele</String>
+  <String Key="CannotOpenAdministration">Není navázáno spojení se serverem. Server není možné administrovat.</String>
+  <String Key="AddNewUser">Přidat nového uživatele</String>
+  
+  <String Key="LastDataUpdate">Poslední aktualizace</String>
+  <String Key="LastSave">Poslední uložení</String>
+
+  <String Key="PohodaSync">Aktualizovat s Pohodou</String>
+  
+  <String Key="CopyToken">Kopírovat token</String>
+  
+  <String Key="SkipCalculation">Nepočítat</String>
+  
+  <String Key="Special">Speciální</String>
+  <String Key="PohodaReload">Znovu načíst data z Pohody</String>
+  <String Key="ShowLog">Zobrazit log</String>
+  <String Key="ShowAdministration">Zobrazit administraci serveru</String>
+  <String Key="ReloadQuestion">Tato operace je časově velmi náročná. Opravdu chcete znovu načíst všechna data?</String>
+  
+  <String Key="InitApp">Načítání aplikace</String>
+
+  <String Key="DatabaseNotConnectedError">Nelze se připojit k databázi. Aplikace bude ukončena.</String>
+
+  <String Key="Database">Databáze</String>
+  
+  <String Key="DBStatus_Connected">Normální</String>
+  <String Key="DBStatus_Locked">Zamknuto</String>
+  <String Key="DBStatus_Blocked">Blokováno</String>
+
+  <String Key="AcquireLock">Zamykám databázi</String>
+  
+  <String Key="CalcAndSave">Výpočet+Uložit</String>
+  
+  <String Key="Loss">Ztráta</String>
+  
+  <String Key="LockedBy">Zamčeno</String>
+
+  <String Key="DatabaseLockedException">Databáze je uzamčena jiným uživatelem.</String>
+
+  <String Key="CreateSubOrder">Vytvořit podobjednávku</String>
+  <String Key="CreatingSubOrder">Vytvářím podobjednávku</String>
+  <String Key="SubOrderCreated">Podobjednávka vytvořena.</String>
+
+  <String Key="PrintLoss">Tisk ztrát</String>
+  <String Key="DeleteLoss">Vymazání ztrát</String>
+  <String Key="LossList">Výpis ztrát</String>
+  <String Key="ClearingLoss">Mazání ztrát</String>
+  
+  <String Key="DataLoading">Načítání dat</String>
+
+  <String Key="QuestionRemoveOrder">Skutečně chcete smazat následující objednávku?</String>
+  <String Key="QuestionRemoveOrderDetail">{0} ({1})</String>
+
+  <!-- Special strings with added symbol -->
+  <String Key="CodeColon">Kód :</String>
+  <String Key="ExternStoragesDots">Externí sklady ...</String>
+  <String Key="BackupToServerDots">Zálohovat na Server ...</String>
+</Localization>

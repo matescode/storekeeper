@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:Class="StoreKeeper.Resources.StoreKeeperResourceList">
+
+    <ImageSource x:Key="IconApplication">Images\application.png</ImageSource>
+    <ImageSource x:Key="IconExternStorage">Images\extern_storage.png</ImageSource>
+    <ImageSource x:Key="IconPohoda">Images\pohoda.png</ImageSource>
+    <ImageSource x:Key="IconSave">Images\save.png</ImageSource>
+    <ImageSource x:Key="IconSearch">Images\search.png</ImageSource>
+    <ImageSource x:Key="IconSettings">Images\settings.png</ImageSource>
+    <ImageSource x:Key="IconUpload">Images\upload.png</ImageSource>
+    <ImageSource x:Key="IconExit">Images\exit.png</ImageSource>
+    <ImageSource x:Key="IconCheck">Images\check.png</ImageSource>
+    <ImageSource x:Key="IconDelete">Images\delete.png</ImageSource>
+    <ImageSource x:Key="IconPlus">Images\plus.png</ImageSource>
+    <ImageSource x:Key="IconOnlineStatus">Images\online_status.png</ImageSource>
+    <ImageSource x:Key="IconOfflineStatus">Images\offline_status.png</ImageSource>
+    <ImageSource x:Key="IconInactiveStatus">Images\inactive_status.png</ImageSource>
+    <ImageSource x:Key="IconCalculation">Images\calculation.png</ImageSource>
+    <ImageSource x:Key="IconUpdate">Images\update.png</ImageSource>
+    <ImageSource x:Key="IconSubOrder">Images\suborder.png</ImageSource>
+</ResourceDictionary>

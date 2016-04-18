@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0E3BAFB-D0D3-403E-823E-5229F00E3E06}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StoreKeeper.Client</RootNamespace>
+    <AssemblyName>StoreKeeper.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Build\Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Build\Bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Shared\MatesCode.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libs\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libs\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionStatus.cs" />
+    <Compile Include="DatabaseStatus.cs" />
+    <Compile Include="Exceptions\DatabaseLockedException.cs" />
+    <Compile Include="IClientConfiguration.cs" />
+    <Compile Include="IClientMessenger.cs" />
+    <Compile Include="IDatabaseAccess.cs" />
+    <Compile Include="IServerAdministration.cs" />
+    <Compile Include="LongOperationResult.cs" />
+    <Compile Include="ClientConfiguration.cs" />
+    <Compile Include="ClientContract.cs" />
+    <Compile Include="ClientFactory.cs" />
+    <Compile Include="ClientRepository.cs" />
+    <Compile Include="Exceptions\CannotPerformMaterialTransferException.cs" />
+    <Compile Include="Exceptions\MaterialArticleNotFoundException.cs" />
+    <Compile Include="Exceptions\ContextNotInitializedException.cs" />
+    <Compile Include="Exceptions\MaterialOrderAlreadyExistException.cs" />
+    <Compile Include="Exceptions\ProductArticleNotFoundException.cs" />
+    <Compile Include="Exceptions\RepositoryNotInitializedException.cs" />
+    <Compile Include="Exceptions\StorageMappingNotFoundException.cs" />
+    <Compile Include="IClientInfrastructureCallback.cs" />
+    <Compile Include="IClientRepository.cs" />
+    <Compile Include="IDataAccess.cs" />
+    <Compile Include="IDataChange.cs" />
+    <Compile Include="ILongOperationResult.cs" />
+    <Compile Include="ILongOperationHandler.cs" />
+    <Compile Include="IStoreKeeperServiceClient.cs" />
+    <Compile Include="LogId.cs" />
+    <Compile Include="Objects\ArticleCodeType.cs" />
+    <Compile Include="Objects\DataProxy\DeliveryNoteSettingsDataProxy.cs" />
+    <Compile Include="Objects\DataProxy\ExternStorageDataProxy.cs" />
+    <Compile Include="Objects\DataProxy\ExternStorageMaterialDataProxy.cs" />
+    <Compile Include="Objects\DataProxy\MaterialDataProxy.cs" />
+    <Compile Include="Objects\DataProxy\MaterialOrderDataProxy.cs" />
+    <Compile Include="Objects\DataProxy\ProductOrderDataProxy.cs" />
+    <Compile Include="Objects\DataProxy\ProductOrderDetailDataProxy.cs" />
+    <Compile Include="Objects\DataProxy\ProductOrderItemDataProxy.cs" />
+    <Compile Include="Objects\DataProxy\ProductStorageMappingDataProxy.cs" />
+    <Compile Include="Objects\DataProxy\ProductStorageMappingItemDataProxy.cs" />
+    <Compile Include="Objects\DataProxy\ProxyBase.cs" />
+    <Compile Include="Objects\IArticleCode.cs" />
+    <Compile Include="Objects\IClientObject.cs" />
+    <Compile Include="Objects\IDeliveryNoteSettings.cs" />
+    <Compile Include="Objects\IExternStorage.cs" />
+    <Compile Include="Objects\IExternStorageMaterial.cs" />
+    <Compile Include="Objects\ILoadable.cs" />
+    <Compile Include="Objects\IMaterial.cs" />
+    <Compile Include="Objects\IMaterialOrder.cs" />
+    <Compile Include="Objects\IMaterialOrderStatus.cs" />
+    <Compile Include="Objects\Implementation\ArticleCode.cs" />
+    <Compile Include="Objects\Implementation\BaseObject.cs" />
+    <Compile Include="Objects\Implementation\DeliveryNoteSettings.cs" />
+    <Compile Include="Objects\Implementation\ExternStorage.cs" />
+    <Compile Include="Objects\Implementation\ExternStorageMaterial.cs" />
+    <Compile Include="Objects\Implementation\Material.cs" />
+    <Compile Include="Objects\Implementation\MaterialOrder.cs" />
+    <Compile Include="Objects\Implementation\MaterialOrderStatus.cs" />
+    <Compile Include="Objects\Implementation\ProductOrderDetail.cs" />
+    <Compile Include="Objects\Implementation\ProductOrderItem.cs" />
+    <Compile Include="Objects\Implementation\ProductOrder.cs" />
+    <Compile Include="Objects\Implementation\ProductStorageMapping.cs" />
+    <Compile Include="Objects\Implementation\ProductStorageMappingItem.cs" />
+    <Compile Include="Objects\Implementation\ServerUser.cs" />
+    <Compile Include="Objects\IOrder.cs" />
+    <Compile Include="Objects\IProductOrderDetail.cs" />
+    <Compile Include="Objects\IProductOrderItem.cs" />
+    <Compile Include="Objects\IProductOrder.cs" />
+    <Compile Include="Objects\IProductStorageMapping.cs" />
+    <Compile Include="Objects\IProductStorageMappingItem.cs" />
+    <Compile Include="Objects\AccountingOrderStatus.cs" />
+    <Compile Include="Objects\IServerUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\Shared\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="StoreKeeperServiceClient.cs" />
+    <Compile Include="StoreKeeperServiceProxy.cs" />
+    <Compile Include="UserContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonBase.Application\CommonBase.Application.csproj">
+      <Project>{402F489C-9ADC-4B9D-AC37-51FFB64D3B93}</Project>
+      <Name>CommonBase.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonBase.Log\CommonBase.Log.csproj">
+      <Project>{B09743EF-9B94-48B2-A2B7-C866EAB7B0AC}</Project>
+      <Name>CommonBase.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonBase\CommonBase.csproj">
+      <Project>{b970fd79-afaf-4953-97ab-923e76ecc599}</Project>
+      <Name>CommonBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StoreKeeper.Common\StoreKeeper.Common.csproj">
+      <Project>{c3760fa2-3d05-446b-9f5d-afc00cc0c27b}</Project>
+      <Name>StoreKeeper.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="StoreKeeperServiceProxy.ServerAccess.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientContract.ClientInfrastructure.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="StoreKeeperServiceClient.InfrastructureCallback.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

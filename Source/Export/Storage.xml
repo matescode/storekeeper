@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<dat:dataPack id="Za001" ico="26916436" application="StwTest" version="2.0" note="Export zásob"  
+xmlns:dat="http://www.stormware.cz/schema/version_2/data.xsd"  
+xmlns:stk="http://www.stormware.cz/schema/version_2/stock.xsd" 
+xmlns:ftr="http://www.stormware.cz/schema/version_2/filter.xsd" 
+xmlns:lStk="http://www.stormware.cz/schema/version_2/list_stock.xsd"  
+xmlns:lAdb="http://www.stormware.cz/schema/version_2/list_addBook.xsd"
+xmlns:typ="http://www.stormware.cz/schema/version_2/type.xsd">
+
+  <dat:dataPackItem id="storage02" version="2.0">
+  <!-- export zásoby -->
+    <lStk:listStockRequest version="2.0" stockVersion="2.0">
+      <lStk:requestStock>
+        <ftr:filter>
+          <ftr:storage>
+            <typ:ids>LOVY</typ:ids>
+          </ftr:storage>
+          <ftr:lastChanges>1970-01-01T00:00:00</ftr:lastChanges>
+        </ftr:filter>
+      </lStk:requestStock>
+
+      <lStk:requestStock>
+        <ftr:filter>
+          <ftr:storage>
+            <typ:ids>Polotovary</typ:ids>
+          </ftr:storage>
+          <ftr:lastChanges>1970-01-01T00:00:00</ftr:lastChanges>
+        </ftr:filter>
+      </lStk:requestStock>
+
+      <lStk:requestStock>
+        <ftr:filter>
+          <ftr:storage>
+            <typ:ids>Prodejna/Naše produkty</typ:ids>
+          </ftr:storage>
+          <ftr:lastChanges>1970-01-01T00:00:00</ftr:lastChanges>
+        </ftr:filter>
+      </lStk:requestStock>
+
+      <lStk:requestStock>
+        <ftr:filter>
+          <ftr:storage>
+            <typ:ids>Prodejna/Práce</typ:ids>
+          </ftr:storage>
+          <ftr:lastChanges>1970-01-01T00:00:00</ftr:lastChanges>
+        </ftr:filter>
+      </lStk:requestStock>
+
+      <lStk:requestStock>
+        <ftr:filter>
+          <ftr:storage>
+            <typ:ids>Prodejna/Rybařina</typ:ids>
+          </ftr:storage>
+          <ftr:lastChanges>1970-01-01T00:00:00</ftr:lastChanges>
+        </ftr:filter>
+      </lStk:requestStock>
+
+      <lStk:requestStock>
+        <ftr:filter>
+          <ftr:storage>
+            <typ:ids>Výroba</typ:ids>
+          </ftr:storage>
+          <ftr:lastChanges>1970-01-01T00:00:00</ftr:lastChanges>
+        </ftr:filter>
+      </lStk:requestStock>
+
+    </lStk:listStockRequest>
+  </dat:dataPackItem>
+  
+</dat:dataPack>

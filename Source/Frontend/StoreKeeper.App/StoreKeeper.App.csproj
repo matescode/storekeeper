@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9363DAB4-4DD3-4388-9393-DE1CF32E456D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StoreKeeper.App</RootNamespace>
+    <AssemblyName>StoreKeeper.App</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Build\Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Build\Bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>application.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Shared\MatesCode.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FB4AD0BAA0DD3C08A38968457967B9F78D8B7D3A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MatesCode.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="StoreKeeperApplication.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ClientApplicationInfo.cs" />
+    <Compile Include="Controls\InformationPanelControl.xaml.cs">
+      <DependentUpon>InformationPanelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExternStorageMaterialListControl.xaml.cs">
+      <DependentUpon>ExternStorageMaterialListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LongOperationHandler.cs" />
+    <Compile Include="Controls\StorageListControl.xaml.cs">
+      <DependentUpon>StorageListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProductOrderDetailControl.xaml.cs">
+      <DependentUpon>ProductOrderDetailControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StorageMappingControl.xaml.cs">
+      <DependentUpon>StorageMappingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TodayControl.xaml.cs">
+      <DependentUpon>TodayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TransferHistoryControl.xaml.cs">
+      <DependentUpon>TransferHistoryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Printing\DeliveryNote\DeliveryNoteFirstPage.cs" />
+    <Compile Include="Printing\DeliveryNote\DeliveryNoteLastPage.cs" />
+    <Compile Include="Printing\DeliveryNote\DeliveryNoteMiddlePage.cs" />
+    <Compile Include="Printing\DeliveryNote\DeliveryNotePageBase.cs" />
+    <Compile Include="Printing\DeliveryNote\DeliveryNotePrintContext.cs" />
+    <Compile Include="Printing\DeliveryNote\IDeliveryNoteDataSource.cs" />
+    <Compile Include="Printing\DeliveryNote\IDeliveryNoteItem.cs" />
+    <Compile Include="Printing\DeliveryNote\IDeliveryNoteOrganization.cs" />
+    <Compile Include="Printing\IPrintingContext.cs" />
+    <Compile Include="Printing\IPrintPage.cs" />
+    <Compile Include="Printing\PrintColumnDefinition.cs" />
+    <Compile Include="Printing\PrintManager.cs" />
+    <Compile Include="Printing\PrintPage.cs" />
+    <Compile Include="Searching\ISearchControl.cs" />
+    <Compile Include="Searching\ISearchProvider.cs" />
+    <Compile Include="Searching\SearchScrollbar.cs" />
+    <Compile Include="ViewModels\Common\MaterialOrderStatusViewModel.cs" />
+    <Compile Include="ViewModels\DeliveryNoteDetailsViewModel.cs" />
+    <Compile Include="ViewModels\ICurrentStorageHolder.cs" />
+    <Compile Include="ViewModels\InformationPanelViewModel.cs" />
+    <Compile Include="ViewModels\ExternStorage\ExternStorageMaterialListViewModel.cs" />
+    <Compile Include="ViewModels\ExternStorage\ExternStorageMaterialViewModel.cs" />
+    <Compile Include="ViewModels\ServerAdministration\ServerAdministrationViewModel.cs" />
+    <Compile Include="ViewModels\ServerAdministration\ServerUserListViewModel.cs" />
+    <Compile Include="ViewModels\ServerAdministration\ServerUserViewModel.cs" />
+    <Compile Include="ViewModels\SettingsWindowViewModel.cs" />
+    <Compile Include="ViewModels\Storage\EditStorageViewModel.cs" />
+    <Compile Include="ViewModels\Storage\StorageComboBoxItem.cs" />
+    <Compile Include="ViewModels\Storage\StorageListProvider.cs" />
+    <Compile Include="ViewModels\Storage\StorageListViewModel.cs" />
+    <Compile Include="ViewModels\Storage\StorageMappingItemViewModel.cs" />
+    <Compile Include="ViewModels\Storage\StorageMappingViewModel.cs" />
+    <Compile Include="ViewModels\Storage\StorageViewModel.cs" />
+    <Compile Include="ViewModels\ProductOrderDetail\ProductOrderDetailItemViewModel.cs" />
+    <Compile Include="ViewModels\ProductOrderDetail\ProductOrderDetailViewModel.cs" />
+    <Compile Include="ViewModels\TodayStatusViewModel.cs" />
+    <Compile Include="Windows\DeliveryNoteDetailsWindow.xaml.cs">
+      <DependentUpon>DeliveryNoteDetailsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditStorageWindow.xaml.cs">
+      <DependentUpon>EditStorageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ServerAdministrationWindow.xaml.cs">
+      <DependentUpon>ServerAdministrationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\StorageListWindow.xaml.cs">
+      <DependentUpon>StorageListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ProductOrderDetailWindow.xaml.cs">
+      <DependentUpon>ProductOrderDetailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\StorageMappingWindow.xaml.cs">
+      <DependentUpon>StorageMappingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TransferHistoryWindow.xaml.cs">
+      <DependentUpon>TransferHistoryWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\CodeCompleteControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\InformationPanelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ExternStorageMaterialListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StorageListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LogBrowserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MaterialListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MaterialOrderListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NewOrderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProductOrderDetailControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProductOrderList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StorageMappingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TodayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TransferHistoryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DeliveryNoteDetailsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditStorageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ServerAdministrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\StorageListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Controls\CodeCompleteControl.xaml.cs">
+      <DependentUpon>CodeCompleteControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Commands.cs" />
+    <Compile Include="Controls\LogBrowserControl.xaml.cs">
+      <DependentUpon>LogBrowserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MaterialListControl.xaml.cs">
+      <DependentUpon>MaterialListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MaterialOrderListControl.xaml.cs">
+      <DependentUpon>MaterialOrderListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NewOrderControl.xaml.cs">
+      <DependentUpon>NewOrderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProductOrderList.xaml.cs">
+      <DependentUpon>ProductOrderList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Log\ApplicationLog.cs" />
+    <Compile Include="Log\ILogBrowser.cs" />
+    <Compile Include="Log\LogEntry.cs" />
+    <Compile Include="StoreKeeperApplication.xaml.cs">
+      <DependentUpon>StoreKeeperApplication.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="AppContext.cs" />
+    <Compile Include="ViewModels\Common\BaseOrderListViewModel.cs" />
+    <Compile Include="ViewModels\Common\BaseOrderViewModel.cs" />
+    <Compile Include="ViewModels\BindingProxy.cs" />
+    <Compile Include="ViewModels\Material\IMaterialChangeListener.cs" />
+    <Compile Include="ViewModels\Common\ItemViewModelBase.cs" />
+    <Compile Include="ViewModels\Common\ListViewModelBase.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\Material\MaterialListNotificator.cs" />
+    <Compile Include="ViewModels\Material\MaterialListViewModel.cs" />
+    <Compile Include="ViewModels\MaterialOrder\MaterialOrderListViewModel.cs" />
+    <Compile Include="ViewModels\MaterialOrder\MaterialOrderViewModel.cs" />
+    <Compile Include="ViewModels\Material\MaterialViewModel.cs" />
+    <Compile Include="ViewModels\Common\NewOrderViewModel.cs" />
+    <Compile Include="ViewModels\ProductOrder\ProductOrderListViewModel.cs" />
+    <Compile Include="ViewModels\ProductOrder\ProductOrderViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Windows\LogWindow.xaml.cs">
+      <DependentUpon>LogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\ProductOrderDetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\StorageMappingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TransferHistoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="..\..\Shared\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Backend\CommonBase.Application\CommonBase.Application.csproj">
+      <Project>{402f489c-9adc-4b9d-ac37-51ffb64d3b93}</Project>
+      <Name>CommonBase.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Backend\CommonBase.Log\CommonBase.Log.csproj">
+      <Project>{b09743ef-9b94-48b2-a2b7-c866eab7b0ac}</Project>
+      <Name>CommonBase.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Backend\CommonBase.Resources\CommonBase.Resources.csproj">
+      <Project>{56db59ed-7318-427a-bbd1-71e090e71856}</Project>
+      <Name>CommonBase.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Backend\CommonBase.UI\CommonBase.UI.csproj">
+      <Project>{40c926c0-dcdc-4cdd-8306-2bdbeaa69a2d}</Project>
+      <Name>CommonBase.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Backend\CommonBase\CommonBase.csproj">
+      <Project>{b970fd79-afaf-4953-97ab-923e76ecc599}</Project>
+      <Name>CommonBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Backend\StoreKeeper.Client\StoreKeeper.Client.csproj">
+      <Project>{f0e3bafb-d0d3-403e-823e-5229f00e3e06}</Project>
+      <Name>StoreKeeper.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Backend\StoreKeeper.Common\StoreKeeper.Common.csproj">
+      <Project>{C3760FA2-3D05-446B-9F5D-AFC00CC0C27B}</Project>
+      <Name>StoreKeeper.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Backend\StoreKeeper.Resources\StoreKeeper.Resources.csproj">
+      <Project>{832161ab-0f0e-428a-9bf9-4d33d5a3371c}</Project>
+      <Name>StoreKeeper.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="application.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AppConfig>
+  <Property Name="Server" Value="MATESC-PC" />
+  <Property Name="ServerPort" Value="8601" />
+  <Property Name="User" Value="Admin" />
+  <Property Name="Password" Value="test" />
+  <Property Name="ClientPort" Value="8610" />
+  <Property Name="Offline" Value="True" />
+  <Property Name="SeekCode" Value="3" />
+</AppConfig>

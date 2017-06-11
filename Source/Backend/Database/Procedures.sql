@@ -754,3 +754,69 @@ print 'SP: ResolveProductOrder added'
 go
 
 -----------------------------------
+
+if exists (select * from sysobjects where id = object_id('RemoveMaterial'))
+begin
+    drop procedure RemoveMaterial
+end
+go
+
+create procedure RemoveMaterial
+(
+	@ArticleId uniqueidentifier
+)
+as
+	set nocount on
+
+	if (dbo.AssureLock() = 0)
+	begin
+		raiserror ('Database is not locked!', 16, 1)
+		return
+	end
+
+	declare @useTransaction bit
+	set @useTransaction = 0
+	if @@TRANCOUNT = 0
+	begin
+		set @useTransaction = 1
+		begin tran
+	end
+
+	declare @type int
+	set @type = 0
+	select @type = [Type] from Articles where Id = @ArticleId
+	if @type = 1
+	begin
+		delete from ProductArticleReservations where ProductArticleItemId in (select Id from ProductArticleItems where ArticleId = @ArticleId)
+		delete from ProductArticleItems where ArticleId = @ArticleId
+	end
+	else if @type = 2
+	begin
+		declare @pid uniqueidentifier
+		select @pid = Id from ProductArticles where ArticleId = @ArticleId
+		
+		delete from ProductArticleReservations where ProductArticleItemId in (select Id from ProductArticleItems where ProductArticleId = @pid)
+		delete from ProductArticleOrders where ProductArticleId = @pid
+		delete from ProductArticleItems where ProductArticleId = @pid
+		delete from ProductArticles where ArticleId = @ArticleId
+
+	end
+
+	delete from ArticleOrders where ArticleId = @ArticleId
+	delete from ArticleStats where ArticleId = @ArticleId
+	delete from Articles where Id = @ArticleId
+
+	if @useTransaction = 1
+	begin
+		commit
+	end
+
+return
+go
+
+grant exec on RemoveMaterial to public
+go
+print 'SP: RemoveMaterial added'
+go
+
+-----------------------------------

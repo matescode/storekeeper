@@ -15,6 +15,6 @@ namespace StoreKeeper.Client
 
         void ReloadMaterial(ObjectId materialId);
 
-        AccountingOrderStatus GetOrderStatus(double orderCount, double accountingOrderCount);
+		AccountingOrderStatus GetOrderStatus(double orderCount, double accountingOrderCount);
     }
 }

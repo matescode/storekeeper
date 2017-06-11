@@ -125,6 +125,7 @@
     <Compile Include="ViewModels\InformationPanelViewModel.cs" />
     <Compile Include="ViewModels\ExternStorage\ExternStorageMaterialListViewModel.cs" />
     <Compile Include="ViewModels\ExternStorage\ExternStorageMaterialViewModel.cs" />
+    <Compile Include="ViewModels\Material\DeleteMaterialViewModel.cs" />
     <Compile Include="ViewModels\ServerAdministration\ServerAdministrationViewModel.cs" />
     <Compile Include="ViewModels\ServerAdministration\ServerUserListViewModel.cs" />
     <Compile Include="ViewModels\ServerAdministration\ServerUserViewModel.cs" />
@@ -139,6 +140,9 @@
     <Compile Include="ViewModels\ProductOrderDetail\ProductOrderDetailItemViewModel.cs" />
     <Compile Include="ViewModels\ProductOrderDetail\ProductOrderDetailViewModel.cs" />
     <Compile Include="ViewModels\TodayStatusViewModel.cs" />
+    <Compile Include="Windows\DeleteMaterialWindow.xaml.cs">
+      <DependentUpon>DeleteMaterialWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\DeliveryNoteDetailsWindow.xaml.cs">
       <DependentUpon>DeliveryNoteDetailsWindow.xaml</DependentUpon>
     </Compile>
@@ -216,6 +220,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DeleteMaterialWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

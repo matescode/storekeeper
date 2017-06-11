@@ -209,6 +209,14 @@
   <String Key="QuestionRemoveOrder">Do you really want to remove the following order?</String>
   <String Key="QuestionRemoveOrderDetail">{0} ({1})</String>
 
+  <String Key="DeleteMaterialWindowTitle">Delete Material</String>
+  <String Key="DeleteMaterial">Delete Material</String>
+  <String Key="QuestionDeleteMaterial">Do you really want to remove the material {0} ?</String>
+  <String Key="MaterialRemoving">Material removing</String>
+  <String Key="MaterialRemoved">Material removed</String>
+  <String Key="MaterialNotRemoved">Material not removed</String>
+  <String Key="MaterialNotExists">Material not exists</String>
+
   <!-- Special strings with added symbol -->
   <String Key="ExternStoragesDots">Extern Storages ...</String>
   <String Key="BackupToServerDots">Backup to server ...</String>

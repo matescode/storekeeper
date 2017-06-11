@@ -18,6 +18,7 @@ using StoreKeeper.App.ViewModels;
 using StoreKeeper.App.ViewModels.ServerAdministration;
 using StoreKeeper.App.ViewModels.Storage;
 using StoreKeeper.Client;
+using StoreKeeper.App.ViewModels.Material;
 
 namespace StoreKeeper.App.Windows
 {
@@ -280,7 +281,25 @@ namespace StoreKeeper.App.Windows
             administrationWindow.ShowDialog();
         }
 
-        private void CalculationCommandExecuted(object sender, ExecutedRoutedEventArgs e)
+		private void CanExecuteDeleteMaterialCommand(object sender, CanExecuteRoutedEventArgs e)
+		{
+			e.CanExecute = Client.DatabaseStatus == DatabaseStatus.Connected;
+		}
+
+		private void DeleteMaterialCommandExecuted(object sender, ExecutedRoutedEventArgs e)
+		{
+			if (Client.ConnectionStatus != ConnectionStatus.Connected)
+			{
+				UIApplication.MessageDialogs.Warning("CannotDeleteMaterial".Localize());
+				return;
+			}
+
+			DeleteMaterialViewModel viewModel = new DeleteMaterialViewModel(Client.DataAccess);
+			DeleteMaterialWindow window = new DeleteMaterialWindow { DataContext = viewModel };
+			window.ShowDialog();
+		}
+
+		private void CalculationCommandExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             Client.CalculationAndSaveAsync();
         }

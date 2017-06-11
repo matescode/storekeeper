@@ -18,6 +18,7 @@
         <CommandBinding Command="{x:Static controls:Commands.SyncCommand}" Executed="SyncCommandExecuted" CanExecute="CanExecuteSyncCommand" />
         <CommandBinding Command="{x:Static controls:Commands.UpdateCommand}" Executed="UpdateCommandExecuted" CanExecute="CanExecuteUpdateMethod" />
         <CommandBinding Command="{x:Static controls:Commands.SyncAllCommand}" Executed="SyncAllCommandExecuted" CanExecute="CanExecuteSyncAllCommand" />
+        <CommandBinding Command="{x:Static controls:Commands.DeleteMaterialCommand}" Executed="DeleteMaterialCommandExecuted" CanExecute="CanExecuteDeleteMaterialCommand" />
     </Window.CommandBindings>
     <Grid>
         <DockPanel LastChildFill="True">
@@ -52,6 +53,7 @@
                             </MenuItem>
                             <MenuItem Header="{loc:Translate ShowLog}" Command="{x:Static controls:Commands.ShowLogCommand}"/>
                             <MenuItem Header="{loc:Translate ShowAdministration}" Command="{x:Static controls:Commands.ShowServerAdministrationCommand}"/>
+                            <MenuItem Header="{loc:Translate DeleteMaterial}" Command="{x:Static controls:Commands.DeleteMaterialCommand}"/>
                         </MenuItem>
                         <Separator />
                         <MenuItem Header="{loc:Translate Exit}" Command="{x:Static controls:Commands.ApplicationExitCommand}">

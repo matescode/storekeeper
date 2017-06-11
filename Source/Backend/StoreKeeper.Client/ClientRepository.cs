@@ -477,7 +477,40 @@ namespace StoreKeeper.Client
             material.Load();
         }
 
-        public AccountingOrderStatus GetOrderStatus(double orderCount, double accountingOrderCount)
+		public IMaterial FindMaterial(string code)
+		{
+			return Materials.FirstOrDefault(m => m.Code.Equals(code, StringComparison.InvariantCultureIgnoreCase));
+		}
+
+		public bool RemoveMaterial(IMaterial material)
+		{
+			try
+			{
+				_longOperationHandler.Start("MaterialRemoving");
+
+				GetLock();
+
+				using (StoreKeeperDataContext dataContext = new StoreKeeperDataContext())
+				{
+					SqlParameter articleIdParam = new SqlParameter("@ArticleId", SqlDbType.UniqueIdentifier) { Value = material.MaterialId.ToGuid() };
+					dataContext.Database.ExecuteSqlCommand("exec RemoveMaterial @ArticleId", articleIdParam);
+				}
+
+				ReloadData();
+				LongOperationResult result = new LongOperationResult { RefreshAll = true };
+				_longOperationHandler.End(result);
+
+				RequestForCalculation();
+				return true;
+			}
+			catch (Exception ex)
+			{
+				_longOperationHandler.OperationFailed(ex.Message);
+				Logger.Error(ex);
+				return false;
+			}
+		}
+		public AccountingOrderStatus GetOrderStatus(double orderCount, double accountingOrderCount)
         {
             if (orderCount > 0)
             {

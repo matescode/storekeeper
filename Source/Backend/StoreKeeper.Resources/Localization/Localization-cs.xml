@@ -209,6 +209,15 @@
   <String Key="QuestionRemoveOrder">Skutečně chcete smazat následující objednávku?</String>
   <String Key="QuestionRemoveOrderDetail">{0} ({1})</String>
 
+  <String Key="DeleteMaterialWindowTitle">Smazat materiál</String>
+  <String Key="DeleteMaterial">Smazat materiál</String>
+  <String Key="QuestionDeleteMaterial">Skutečně chcete smazat materiál {0} ?</String>
+  <String Key="MaterialRemoving">Mazání materiálu</String>
+  <String Key="MaterialRemoved">Materiál smazán</String>
+  <String Key="MaterialNotRemoved">Materiál se nepodařilo smazat</String>
+  <String Key="MaterialNotExists">Materiál neexistuje</String>
+  <String Key="CannotDeleteMaterial">Není navázáno spojení s databází. Materiál není možné smazat.</String>
+
   <!-- Special strings with added symbol -->
   <String Key="CodeColon">Kód :</String>
   <String Key="ExternStoragesDots">Externí sklady ...</String>

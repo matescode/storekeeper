@@ -48,5 +48,9 @@ namespace StoreKeeper.Client
         bool IsCodeValid(string code, ArticleCodeType codeType);
 
         void RequestForCalculation();
-    }
+
+		IMaterial FindMaterial(string code);
+
+		bool RemoveMaterial(IMaterial material);
+	}
 }

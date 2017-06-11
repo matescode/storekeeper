@@ -70,6 +70,7 @@
                 <DataGridTextColumn Header="{loc:Translate DeliveredCount}" 
                                     Width="80"
                                     Binding="{Binding CurrentCount}"
+                                    IsReadOnly="True"
                                     ElementStyle="{StaticResource RightAlignmentCellStyle}"
                                     />
 

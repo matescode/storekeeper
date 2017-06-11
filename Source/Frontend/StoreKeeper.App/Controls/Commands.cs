@@ -29,5 +29,8 @@ namespace StoreKeeper.App.Controls
         public static RoutedCommand StartSearchCommand = new RoutedCommand();
 
         public static RoutedCommand UpdateCommand = new RoutedCommand();
-    }
+
+		public static RoutedCommand DeleteMaterialCommand = new RoutedCommand();
+
+	}
 }
